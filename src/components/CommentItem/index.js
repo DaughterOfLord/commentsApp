@@ -10,13 +10,13 @@ const CommentItem = props => {
   const initial = name ? name[0].toUpperCase() : ''
   const likeTestClassName = isLiked ? 'button active' : 'button'
   const likeImgUrl = isLiked
-    ? 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
-    : 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
+    ? 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
+    : 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
   const postedTime = formatDistanceToNow(date)
 
   const onClickLike = () => {
-    const {toggleIsClicked} = props
-    toggleIsClicked(id)
+    const {toggleIsLiked} = props
+    toggleIsLiked(id)
   }
 
   const onDeleteComment = () => {

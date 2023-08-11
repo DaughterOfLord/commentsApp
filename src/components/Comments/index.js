@@ -17,7 +17,7 @@ const initialContainerBackgroundClassNames = [
 
 // Write your code here
 
-class Comment extends Component {
+class Comments extends Component {
   state = {
     nameInput: '',
     commentInput: '',
@@ -59,7 +59,7 @@ class Comment extends Component {
   onAddComment = event => {
     event.preventDefault()
     const {nameInput, commentInput} = this.state
-    const initialBackgroundColorName = `initial-container ${
+    const initialBackgroundColorClassName = `initial-container ${
       initialContainerBackgroundClassNames[
         Math.ceil(
           Math.random() * initialContainerBackgroundClassNames.length - 1,
@@ -72,7 +72,7 @@ class Comment extends Component {
       comment: commentInput,
       date: new Date(),
       isLiked: false,
-      initialClassnames: initialBackgroundColorName,
+      initialClassnames: initialBackgroundColorClassName,
     }
 
     this.setState(prevState => ({
@@ -94,5 +94,54 @@ class Comment extends Component {
     })
   }
 
-  render() {}
+  render() {
+    const {nameInput, commentInput, commentsList} = this.state
+
+    return (
+      <div className="app-container">
+        <div className="comments-container">
+          <h1 className="app-heading">Comments</h1>
+          <div className="comments-inputs">
+            <form className="form" onClick={this.onAddComment}>
+              <p className="form-Description">
+                Say something about 4.O Technologies
+              </p>
+              <div className="container">
+                <input
+                  type="text"
+                  className="name-input"
+                  placeholder="Your name"
+                  value={nameInput}
+                  onChange={this.onChangeNameInput}
+                />
+                <textarea
+                  placeholder="Your comment"
+                  className="comment-input"
+                  value={commentInput}
+                  onChange={this.onChangeCommentInput}
+                  rows="6"
+                />
+                <button type="button" className="add-button">
+                  Add Comment
+                </button>
+              </div>
+            </form>
+            <img
+              className="image"
+              src="https://assets.ccbp.in/frontend/react-js/comments-app/comments-img.png"
+              alt="comments"
+            />
+          </div>
+          <hr className="line" />
+          <p className="heading">
+            <span className="comments-count">{commentsList.length}</span>
+            Comments
+          </p>
+          <ul className="comments-list">{this.renderCommentsList()}</ul>
+        </div>
+      </div>
+    )
+  }
 }
+
+export default Comments

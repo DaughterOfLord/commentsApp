@@ -43,9 +43,37 @@
   width: 32px;
   height: 32px;
   margin-top: 18px;
-  margin-bottom: 8px;
+  margin-right: 8px;
   border-radius: 16px;
   flex-shrink: 0;
+}
+
+.amber {
+  background-color: #f59e0b;
+}
+
+.blue {
+  background-color: #0b69ff;
+}
+
+.orange {
+  background-color: #f97316;
+}
+
+.emerald {
+  background-color: #10b981;
+}
+
+.teal {
+  background-color: #14b8a6;
+}
+
+.red {
+  background-color: #b91c1c;
+}
+
+.light-blue {
+  background-color: #0ea5e9;
 }
 
 .initial {
@@ -123,7 +151,7 @@
   width: 20px;
 }
 
-.current-line {
+.comment-line {
   width: 100%;
   border: 1px solid #dee0e3;
 }
