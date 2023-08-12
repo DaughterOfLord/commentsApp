@@ -102,7 +102,7 @@ class Comments extends Component {
         <div className="comments-container">
           <h1 className="app-heading">Comments</h1>
           <div className="comments-inputs">
-            <form className="form" onClick={this.onAddComment}>
+            <form className="form" onSubmit={this.onAddComment}>
               <p className="form-Description">
                 Say something about 4.O Technologies
               </p>
@@ -121,7 +121,11 @@ class Comments extends Component {
                   onChange={this.onChangeCommentInput}
                   rows="6"
                 />
-                <button type="button" className="add-button">
+                <button
+                  type="button"
+                  className="add-button"
+                  onClick={this.onAddComment}
+                >
                   Add Comment
                 </button>
               </div>
